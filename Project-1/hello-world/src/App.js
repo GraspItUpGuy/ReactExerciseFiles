@@ -25,13 +25,13 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        
+        <Outro />
       </div>
     );
   }
 }
 
-export default App;
+
 
 
 class Header extends Component {
@@ -58,3 +58,16 @@ class Intro extends Component {
   }
   
 }
+
+class Outro extends Component {
+  render(){
+    return(
+      <p>This is the outro class component</p>
+    )
+  }
+}
+
+
+
+
+export default App;
