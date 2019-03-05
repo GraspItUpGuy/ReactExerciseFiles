@@ -6,6 +6,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      
+      <Header />
+      <p>Hey there folks! </p>
+      <Intro />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -17,12 +21,40 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
+         
             Learn React
           </a>
         </header>
+        
       </div>
     );
   }
 }
 
 export default App;
+
+
+class Header extends Component {
+  render(){
+    return(
+      <div className = "App-Header">
+          
+          <p>Welcome to react in the Header class </p>
+      </div>
+    )
+  }
+
+}
+
+class Intro extends Component {
+  render(){
+    return(
+      <div>
+        <p>
+           Welcome back to react app in the intro class.
+          </p>
+      </div>
+    )
+  }
+  
+}
