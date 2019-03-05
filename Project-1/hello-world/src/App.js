@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header'
+import Intro from './Intro'
+import Outro from './Outo'
 
 class App extends Component {
   render() {
@@ -34,38 +37,9 @@ class App extends Component {
 
 
 
-class Header extends Component {
-  render(){
-    return(
-      <div className = "App-Header">
-          
-          <p>Welcome to react in the Header class </p>
-      </div>
-    )
-  }
 
-}
 
-class Intro extends Component {
-  render(){
-    return(
-      <div>
-        <p>
-           Welcome back to react app in the intro class.
-          </p>
-      </div>
-    )
-  }
-  
-}
 
-class Outro extends Component {
-  render(){
-    return(
-      <p>This is the outro class component</p>
-    )
-  }
-}
 
 
 
