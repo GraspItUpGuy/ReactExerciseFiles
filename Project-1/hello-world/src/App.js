@@ -26,6 +26,10 @@ class App extends Component {
           >
          
             Learn React
+
+            {
+              // this is how we give comments in react => inside the blocks
+            }
           </a>
         </header>
         <Outro />
