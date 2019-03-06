@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PropTypes from 'prop-types'
 
 class App extends Component {
   render() {
@@ -12,21 +13,35 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          
+          <h3>prop number is : {this.props.propNumber}</h3>
+        <h3>prop number is : {this.props.propString}</h3>
+        <h3>prop number is : {this.props.propObject.obj1}</h3>
+       
         </header>
         <Parent />
       </div>
     );
   }
+}
+
+// PropTypes now has been included into a seperate package in npm => 'prop-types'
+// install it seperately from npmjs.org
+
+App.propTypes = {
+  propObject: PropTypes.object,
+  propString: PropTypes.string,
+  propNumber: PropTypes.number
+}
+
+App.defaultProps = {
+  propNumber: 3,
+  propString: "THis is prop string",
+  propObject: {
+    obj1: "I am obj 1",
+    obj2: "I am obj 2",
+    obj3: "I am obj 3"
+  }
+
 }
 
 class Parent extends Component{
@@ -39,6 +54,11 @@ class Parent extends Component{
     )
   }
 }
+
+
+
+
+
 
 Parent.defaultProps = {
   cars : ["BMW " , "AUDI " , "TOYOTA ", "CITY "] 
