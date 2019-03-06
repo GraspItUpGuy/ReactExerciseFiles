@@ -9,8 +9,6 @@ class App extends Component {
     this.state = {};
   }
 
-
-
   sayHello(name){
     return  "Hello " + name
   }
