@@ -18,8 +18,8 @@ class Container extends Component{
                 </h3>
               </a>
               <p className="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on September 24, 2019</p>
+                <a href="#"> GraspItUpGuy </a>
+                on March 4, 2019</p>
             </div>
             <hr />
             <div className="post-preview">
@@ -29,8 +29,8 @@ class Container extends Component{
                 </h2>
               </a>
               <p className="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on September 18, 2019</p>
+                <a href="#"> GraspItUpGuy </a>
+                on March 5, 2019</p>
             </div>
             <hr />
             <div className="post-preview">
@@ -43,8 +43,8 @@ class Container extends Component{
                 </h3>
               </a>
               <p className="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on August 24, 2019</p>
+                <a href="#"> GraspItUpGuy </a>
+                on March 5, 2019</p>
             </div>
             <hr />
             <div className="post-preview">
@@ -57,8 +57,8 @@ class Container extends Component{
                 </h3>
               </a>
               <p className="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on July 8, 2019</p>
+                <a href="#"> GraspItUpGuy </a>
+                on March 6, 2019</p>
             </div>
             <hr />
             {/* <!-- Pager --> */}
