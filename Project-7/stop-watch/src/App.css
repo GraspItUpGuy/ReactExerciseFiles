@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+
+span{
+  font-size : 50px;
+  color : #fff;
+  background-color: #2ecc73;
+  border-radius: 35%; 
+  padding : 10px;
+  margin : 3px;
+
+}
