@@ -10,10 +10,10 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Welcome to Timer App built in React.js
           </p>
         </header>
-        <Timer />
+        <Timer start = {Date.now} />
       </div>
     );
   }
