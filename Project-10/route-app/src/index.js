@@ -16,14 +16,14 @@ import {
 ReactDOM.render(
        <Router history = {history }> 
         <Route path = "/" component = {App}></Route>
-         </Router>
+         >
          
          <Route path = "/ONE" component = {ONE}></Route> 
          <Route path = "/TWO" component = {TWO}></Route>
           <Route path = "/THREE" component = {THREE}></Route>
           <Route path = "/FOUR" component = {FOUR}></Route>
          
-
+</Router>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
