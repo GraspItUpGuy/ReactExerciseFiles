@@ -41,7 +41,7 @@ class Course extends Component{
         this.setState = {active : active}
         this.props.CartTotal(active ? this.props.price  : -this.props.price)
     }
-    constructor(props){
+    constructor(props){ 
         super(props);
 
         this.state = {

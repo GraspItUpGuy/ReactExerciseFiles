@@ -19,7 +19,8 @@ class CourseSales extends Component{
     render(){
         console.log(this.props.courseName)
         var courseName = this.props.courseName.map((course , i)=>{
-            return <Course name ={courseName.name}  price = {courseName.price}
+            
+            return <Course name ={this.courseName.name}  price = {courseName.price}
                      CartTotal = {this.CartTotal} active={this.state.active}
             />
         })
@@ -57,6 +58,7 @@ class Course extends Component {
     render(){
         return(
             <div>
+            {console.log(this.props.CourseName.name)}
            <p onClick = {this.Clicker}> {this.props.name} <br/> {this.props.price}</p>
             </div>
         )
