@@ -8,7 +8,8 @@ import Contact from './Contact'
 import MickeyMouse from './MickeyMouse'
 import IronMan from './IronMan'
 import SuperMan from './SuperMan'
-
+import Four, FourDotOne from './Four'
+import NoMatch from './noMatch'
 
 import {
     BrowserRouter as Router,
@@ -19,6 +20,7 @@ import {
 ReactDOM.render(<Router>
         <div>
         <ul>
+        
              <li><Link to="/">Home</Link></li>
              <li><Link to="/contact">Contact</Link></li>
              <li><Link to="/marvel">SuperMan</Link></li>
@@ -31,6 +33,9 @@ ReactDOM.render(<Router>
             <Route exact path = "/marvel"  component = {SuperMan}/>
             <Route exact path = "/DC"  component = {IronMan}/>
             <Route exact path = "/Disney"  component = {MickeyMouse}/>
+            <Route exact path = "/Four"  component = {Four}/>
+            <Route exact path = "/*"  component = {NoMatch}/>
+            <Route path= "/Four/:id" component={FourDotOne} / >
         </div>
 
      </Router>
