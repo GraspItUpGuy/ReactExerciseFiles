@@ -11,7 +11,7 @@ class Four extends Component{
             <div>
               <p>I am Four component</p>
               <ul>
-                  <li> <Link to "/Four/123">FourDotOne </Link></li>
+                  <li> <Link to "/Four/:123">FourDotOne </Link></li>
               </ul>
               {this.props.children}
             </div>
