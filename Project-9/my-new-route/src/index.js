@@ -35,7 +35,7 @@ ReactDOM.render(<Router>
             <Route exact path = "/Disney"  component = {MickeyMouse}/>
             <Route exact path = "/Four"  component = {Four}/>
             <Route exact path = "/*"  component = {NoMatch}/>
-            <Route path= "/Four/:id" component={FourDotOne} / >
+            <Route path= "/Four/:id" component={FourDotOne} />
         </div>
 
      </Router>
