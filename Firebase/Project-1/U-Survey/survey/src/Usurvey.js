@@ -23,12 +23,35 @@ class Usurvey extends Component{
         super(props);
 
         this.state ={
-            uid : uuid.v1()
+            uid : uuid.v1(),
+            // read documentation => uuid npm
+            studentName : '',
+            answers : {
+                answer1 : '',
+                answer2 : '',
+                answer3 : '',
+            },
+            isSubmitted : false,
         }
     }
     render(){
+       let studentName ;
+       let questions;
+       if(this.state.studentName === '' && this.state.isSubmitted === false){
+           studentName = <div>
+               <h1>Hey student, please give us your name :</h1>
+               <form>
+                   <input type="text" placeholder = "Enter your name" ref = "name" />
+               </form>
+           </div>
+       }
+
         return(
-            <h1> I am U-Survey Component.  Nice to meet you !!!</h1>
+           <div>
+               {studentName}
+               ------------------------------------
+               {questions}
+           </div>
         )
     }
 }
