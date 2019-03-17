@@ -19,6 +19,12 @@ var config = {
 
 
 class Usurvey extends Component{
+    nameSubmit(event){
+        var studentName =  this.refs.name.value
+        this.setState({studentName : studentName}, ()=>{
+            console.log(this.state)
+        })
+    }
     constructor(props){
         super(props);
 
@@ -33,6 +39,7 @@ class Usurvey extends Component{
             },
             isSubmitted : false,
         }
+        this.nameSubmit = this.nameSubmit.bind(this)
     }
     render(){
        let studentName ;
@@ -40,10 +47,13 @@ class Usurvey extends Component{
        if(this.state.studentName === '' && this.state.isSubmitted === false){
            studentName = <div>
                <h1>Hey student, please give us your name :</h1>
-               <form>
-                   <input type="text" placeholder = "Enter your name" ref = "name" />
+               <form onSubmit = {this.nameSubmit}>
+                   <input className = "Nammy" type="text" placeholder = "Enter your name" ref = "name" />
                </form>
-           </div>
+           </div>;
+           questions = null;
+       }else if(this.state.studentName !='' && this.state.isSubmitted === false){
+           studentName = <h2>Welcome to U-Survey, {this.state.studentName}</h2>
        }
 
         return(
