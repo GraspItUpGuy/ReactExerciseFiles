@@ -53,14 +53,14 @@ class Usurvey extends Component{
            </div>;
            questions = null;
        }else if(this.state.studentName !== '' && this.state.isSubmitted === false){
-           studentName = <h2>Welcome to U-Survey, {this.state.studentName}</h2>
-           questions = <p>{this.state.studentName} Hey {this.state.studentName}</p>
+           studentName = <h2>Welcome to U-Survey, {this.state.studentName}, help us conduct the survey</h2>
+           questions = <p> Hey {this.state.studentName}</p>
        }
 
         return(
            <div>
                {studentName}
-               ------------------------------------
+               
                {questions}
            </div>
         )
