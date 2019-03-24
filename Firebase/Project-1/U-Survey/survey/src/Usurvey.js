@@ -12,6 +12,12 @@ var config = {
     messagingSenderId: "705561358082"
   };
   firebase.initializeApp(config);
+  // how firebase works =>  basically on refs and set
+  // whatever we pass in refs => if found in database -> it goes inside it
+  //                             not found in database -> created new one for us
+  // refs => just go and read the args in database
+  // set  =>  sets the values in the database
+   
 
 
 class Usurvey extends Component {
@@ -38,15 +44,19 @@ class Usurvey extends Component {
 
     }
     questionSubmit(event){
-        // TODO : submission of forms
         this.setState({isSubmitted : true})
-
+        // + is used to create a node inside the database
+        firebase.database().ref('uSurvey/' + this.state.uid).set({
+            studentName : this.state.studentName,
+            answers : this.state.answers,
+        })
+        
     }
     constructor(props){
         super(props);
         this.state = { 
             uid :uuid.v1(),
-            studentName : 'Puneet=> to be changed',
+            studentName : '',
             answers : {
                 answer1 : '',
                 answer2 : '',
