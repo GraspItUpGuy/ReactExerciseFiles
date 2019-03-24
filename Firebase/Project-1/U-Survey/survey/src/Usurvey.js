@@ -24,18 +24,29 @@ class Usurvey extends Component {
     }
     answerSelected(event){
         // TODO : give answers their value
+        let answers = this.state.answers;
+        if(event.target.name === 'answer1'){
+            answers.answer1 = event.target.value;
+        }else if(event.target.name === 'answer2'){
+            answers.answer2 = event.target.value;
+        }else if(event.target.name === 'answer3'){
+            answers.answer3 = event.target.value;
+        }
+        this.setState({answers : answers}, ()=>{
+            console.log(this.state)
+        })
 
     }
     questionSubmit(event){
         // TODO : submission of forms
-
+        this.setState({isSubmitted : true})
 
     }
     constructor(props){
         super(props);
         this.state = { 
             uid :uuid.v1(),
-            studentName : 'Puneet => to be removed form code',
+            studentName : 'Puneet=> to be changed',
             answers : {
                 answer1 : '',
                 answer2 : '',
@@ -95,7 +106,10 @@ class Usurvey extends Component {
                     </form>
             </div>;
            
-        }
+        } else if( (this.state.studentName !== '') && (this.state.isSubmitted ===true)){
+            studentName = <h1> Thanks a lot, {this.state.studentName} for your precious time</h1>
+        } 
+
         return(
             <div>
                 
