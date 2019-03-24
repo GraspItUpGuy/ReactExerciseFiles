@@ -46,10 +46,10 @@ class Usurvey extends Component {
     questionSubmit(event){
         this.setState({isSubmitted : true})
         // + is used to create a node inside the database
-        firebase.database().ref('uSurvey/' + this.state.uid).set({
+        firebase.database().ref('/uSurvey/' + this.state.uid).set({
             studentName : this.state.studentName,
             answers : this.state.answers,
-        })
+        });
         
     }
     constructor(props){
