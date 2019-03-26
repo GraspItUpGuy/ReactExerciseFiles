@@ -1,5 +1,5 @@
 import React , { Component } from 'react'
-let firebase = require('firebase');
+var firebase = require('firebase');
 var uuid = require('uuid')
 
 // Initialize Firebase => from documentation
@@ -43,7 +43,7 @@ class Usurvey extends Component {
         })
 
     }
-    questionSubmit(){
+    questionSubmit(event){
         console.log('submit button clicked')
         
         // + is used to create a node inside the database
@@ -82,7 +82,7 @@ class Usurvey extends Component {
            </div>;
            questions = null;
 
-        }else if((this.state.studentName!== '') && (this.state.isSubmitted == false)){
+        }else if((this.state.studentName!== '') && (this.state.isSubmitted === false)){
            
             studentName = <h1>Welcome to Usurvey , {this.state.studentName}</h1>;
             questions = <div>
