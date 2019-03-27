@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { firestore } from 'firebase';
+
 var firebase = require('firebase')
 
 // Initialize Firebase => from documentation
@@ -47,7 +47,39 @@ class Auth extends Component{
     }; // end of LogIn Function
 
     // function to handle  SignUp Calls
-    SignUp(){};
+    SignUp(){
+        console.log('Signup button clicked')
+        // setting state and values
+        const email = this.refs.email.value ;
+        this.refs.email.value = ""; 
+        const password = this.refs.password.value;
+        this.refs.password.value = "";
+        console.log(email,password);
+
+        // setting firebase auth
+        const auth = firebase.auth();
+        const promise = auth.createUserWithEmailAndPassword(email,password);
+
+        // then and catch in promise
+        promise.then(
+            
+                  user =>{
+                      var err = "Welcome" + user.email;
+                      firebase.database().ref('/users' + user.uid).set({
+                         email: user.email,
+                      });
+                      console.log(user);
+                      this.setState({err : err});
+                  }
+                  
+              ); // then ends
+        promise.catch(e=>{
+            var err = e.message;
+            console.log('inside .then');
+            console.log(err);
+            this.setState({err : err});
+        });
+    };
     // end of SignUp Function
 
     // function to handle LogOut calls
@@ -75,10 +107,10 @@ class Auth extends Component{
             <input id="email" ref="email" type="email" placeholder="Enter your Email" /><br />
             <input id="password" ref="password" type="password" placeholder="Enter your Password" /><br />
             
-            <p>{this.state.err}</p> // prints the error message => promise => inside LogIn function
-            <button onClick={this.LogIn}>Log-In</button> // button click events
-            <button onClick={this.SignUp}>Sign-Up</button>// button click events
-            <button onClick={this.LogOut}>Log-Out</button>// button click events
+            <p>{this.state.err}</p> {/* prints the error message => promise => inside LogIn function */}
+            <button onClick={this.LogIn}>Log-In</button> {/* button click events */ }
+             <button onClick={this.SignUp}>Sign-Up</button>{/*/ button click events */}
+            <button onClick={this.LogOut}>Log-Out</button>{/*/// button click events*/}
 
             </div>
         )
