@@ -68,8 +68,8 @@ class Auth extends Component{
                       var err = "Welcome" + user.email;
                       user.uid = user.uid;
 
-                      var node = "user/" + user.uid;
-                      firebase.database().ref(node).set({
+                      
+                      firebase.database().ref("/user/" + user.uid).set({
                          email: user.email,
                       });
                       console.log(user);
