@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { firestore } from 'firebase';
 var firebase = require('firebase')
 
 // Initialize Firebase
@@ -15,10 +16,47 @@ var config = {
 
 
 class Auth extends Component{
+    LogIn(event){
+        const email = this.refs.email.value ;
+        this.refs.email.value = ""; 
+        const password = this.refs.password.value;
+        this.refs.password.value = "";
+        console.log(email,password);
+
+        const auth = firebase.auth();
+       const promise = auth.signInWithEmailAndPassword(email, password);
+       // TODO : Handle  login Promise
+
+       promise.catch(e => {
+           var err = e.message;
+           console.log(err);
+           this.setState({err : err}); 
+       })
+
+    };
+    LogOut(){};
+    SignUp(){};
+
+    constructor(props){
+        super(props);
+        this.state={
+            err : '',
+        };
+        this.LogIn = this.LogIn.bind(this);
+        this.SignUp = this.SignUp.bind(this);
+        this.LogOut = this.LogOut.bind(this);
+    }
     render(){
         return(
             <div>
-                <h1>I am Auth Component</h1>
+            
+            <input id="email" ref="email" type="email" placeholder="Enter your Email" /><br />
+            <input id="password" ref="password" type="password" placeholder="Enter your Password" /><br />
+            <p>{this.state.err}</p>
+            <button onClick={this.LogIn}>Log-In</button>
+            <button onClick={this.SignUp}>Sign-Up</button>
+            <button onClick={this.LogOut}>Log-Out</button>
+
             </div>
         )
     }
