@@ -1,15 +1,16 @@
 import React , { Component } from 'react'
-var firebase = require('firebase');
+const firebase = require('firebase/app');
 var uuid = require('uuid')
 
 // Initialize Firebase => from documentation
+// Initialize Firebase
 var config = {
-    apiKey: "AIzaSyD0at8LzGZR2BKgB__yrTvrpXV_OWDeZ38",
-    authDomain: "u-survey-ab057.firebaseapp.com",
-    databaseURL: "https://u-survey-ab057.firebaseio.com",
-    projectId: "u-survey-ab057",
-    storageBucket: "u-survey-ab057.appspot.com",
-    messagingSenderId: "705561358082"
+    apiKey: "AIzaSyCI0dbx4_Na9TtfnNJINBK0CDovEQcawXM",
+    authDomain: "survey-app-bf816.firebaseapp.com",
+    databaseURL: "https://survey-app-bf816.firebaseio.com",
+    projectId: "survey-app-bf816",
+    storageBucket: "survey-app-bf816.appspot.com",
+    messagingSenderId: "623443004699"
   };
   firebase.initializeApp(config);
   // how firebase works =>  basically on refs and set
