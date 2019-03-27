@@ -64,8 +64,12 @@ class Auth extends Component{
         promise.then(
             
                   user =>{
+                      console.log('ínside .then')
                       var err = "Welcome" + user.email;
-                      firebase.database().ref('/users' + user.uid).set({
+                      user.uid = user.uid;
+
+                      var node = "user/" + user.uid;
+                      firebase.database().ref(node).set({
                          email: user.email,
                       });
                       console.log(user);
@@ -74,6 +78,7 @@ class Auth extends Component{
                   
               ); // then ends
         promise.catch(e=>{
+            console.log('inside .catch')
             var err = e.message;
             console.log('inside .then');
             console.log(err);
